@@ -14,5 +14,6 @@ export async function POST(req: NextRequest) {
     react: WelcomeTemplate({ name: 'Berkcan' }),
   });
 
+  
   return NextResponse.json({ message: 'Email sent successfully' });
 }
