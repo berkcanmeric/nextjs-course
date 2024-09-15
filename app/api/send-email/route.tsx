@@ -1,4 +1,4 @@
-import welcometemplate from '@/emails/welcometemplate';
+import WelcomeTemplate from '@/emails/WelcomeTemplate';
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
@@ -11,9 +11,8 @@ export async function POST(req: NextRequest) {
     from: 'onboarding@resend.dev',
     to: email,
     subject: 'Welcome to Our Platform!',
-    react: welcometemplate({ name: 'Berkcan' }),
+    react: WelcomeTemplate({ name: 'Berkcan' }),
   });
 
-  
   return NextResponse.json({ message: 'Email sent successfully' });
 }
